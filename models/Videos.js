@@ -1,6 +1,6 @@
 const { Schema, model } = require("mongoose");
 
-const VideoSchema = Schema({
+const VideoSchema = new Schema({
   title: String,
   description: String,
   channelTitle: String,
@@ -11,7 +11,6 @@ const VideoSchema = Schema({
     required: true,
   },
 });
-
 VideoSchema.index({ title: "text", description: "text" });
 const Videos = model("videos", VideoSchema);
 module.exports = Videos;

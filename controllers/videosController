@@ -27,9 +27,7 @@ module.exports.getVideos = async (req, res) => {
 module.exports.searchVideos = async (req, res) => {
   try {
     const { query } = req.body;
-    const videos = await Videos.find({ $text: { $search: query } }).sort({
-      publishTime: -1,
-    });
+    const videos = await Videos.find({ $text: { $search: query } });
     if (!videos) return res.status(404).json({ message: "Videos not found" });
     return res.status(201).json({ videos });
   } catch (error) {
