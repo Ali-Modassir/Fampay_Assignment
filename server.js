@@ -3,6 +3,8 @@ const express = require("express");
 const mongoose = require("mongoose");
 const morgan = require("morgan");
 
+const { getYTVideos } = require("./youtube/youtubeApi");
+
 const app = express();
 app.use(express.json());
 
@@ -19,6 +21,9 @@ app.use((req, res, next) => {
   next();
 });
 
+// setInterval(getYTVideos, 10000);
+
+// getYTVideos();
 //Setting up database and backend Server
 const PORT = process.env.PORT || 8000;
 const MONGODB_URI = process.env.MONGODB_URI;
