@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const morgan = require("morgan");
 
 const { getYTVideos } = require("./youtube/youtubeApi");
+const videoRoutes = require("./routes/videosRoutes");
 
 const app = express();
 app.use(express.json());
@@ -20,6 +21,8 @@ app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Methods", "GET, POST, PATCH, DELETE");
   next();
 });
+
+app.use("/videos", videoRoutes);
 
 // setInterval(getYTVideos, 10000);
 
