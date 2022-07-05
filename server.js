@@ -24,7 +24,7 @@ app.use((req, res, next) => {
 
 app.use("/videos", videoRoutes);
 
-// setInterval(getYTVideos, 10000);
+setInterval(getYTVideos, 10000);
 
 // getYTVideos();
 //Setting up database and backend Server
