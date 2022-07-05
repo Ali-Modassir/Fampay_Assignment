@@ -1,5 +1,11 @@
 module.exports.BASE_URL = "https://www.googleapis.com/youtube/v3";
-module.exports.API_KEY = process.env.YOUTUBE_API_KEY;
+
+const API_KEY_1 = process.env.YOUTUBE_API_KEY_1;
+const API_KEY_2 = process.env.YOUTUBE_API_KEY_2;
+const API_KEY_3 = process.env.YOUTUBE_API_KEY_3;
+
+module.exports.API_KEYS = [API_KEY_1, API_KEY_2, API_KEY_3];
+
 module.exports.QUERIES = [
   "cricket",
   "football",

@@ -24,9 +24,9 @@ app.use((req, res, next) => {
 
 app.use("/videos", videoRoutes);
 
-setInterval(getYTVideos, 10000);
+// setInterval(getYTVideos, 10000);
+getYTVideos();
 
-// getYTVideos();
 //Setting up database and backend Server
 const PORT = process.env.PORT || 8000;
 const MONGODB_URI = process.env.MONGODB_URI;

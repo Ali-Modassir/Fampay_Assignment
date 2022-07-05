@@ -1,11 +1,17 @@
 const axios = require("axios").default;
 
-const { QUERIES, BASE_URL, API_KEY } = require("./youtubeUtils");
+const { QUERIES, BASE_URL } = require("./youtubeUtils");
 const Videos = require("../models/Videos");
+
+var { API_KEYS } = require("./youtubeUtils");
+
+const rotateArray = () => {
+  API_KEYS.unshift(API_KEYS.pop());
+};
 
 module.exports.getYTVideos = async () => {
   const query = QUERIES[Math.floor(Math.random() * QUERIES?.length)];
-  const URL = `${BASE_URL}/search?key=${API_KEY}&type=video&part=snippet&q=${query}`;
+  const URL = `${BASE_URL}/search?key=${API_KEYS[0]}&type=video&part=snippet&q=${query}`;
   try {
     const res = await axios.get(URL);
     const vids = res?.data?.items;
@@ -23,6 +29,8 @@ module.exports.getYTVideos = async () => {
     });
     await Videos.insertMany(allVideos);
   } catch (error) {
-    console.log("Error in fetching data from youtube", error);
+    if (error?.response?.status == 403) {
+      rotateArray();
+    } else console.log(error);
   }
 };
