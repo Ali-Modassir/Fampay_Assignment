@@ -1,0 +1,12 @@
+version: '3.9'
+
+services:
+  # Node API service
+  api:
+    container_name: "videos_api"
+    build: .
+    ports:
+      - 8000:8000
+    environment:
+      MONGODB_URI: mongodb+srv://Fampay:kMf6IHiG05qRO0v9@cluster0.kyz02.mongodb.net/Fampay?retryWrites=true&w=majority
+      YOUTUBE_API_KEY: AIzaSyBY22geWA69w8AC4D31MZQWQVpI1jKoLjE 
