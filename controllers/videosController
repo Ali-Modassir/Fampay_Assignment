@@ -1,5 +1,6 @@
 const Videos = require("../models/Videos");
 
+//GET all videos
 module.exports.getVideos = async (req, res) => {
   try {
     const p = req.query?.p;
@@ -24,6 +25,7 @@ module.exports.getVideos = async (req, res) => {
   }
 };
 
+//Searching a video accroding to the search query
 module.exports.searchVideos = async (req, res) => {
   try {
     const { query } = req.body;
