@@ -1,0 +1,55 @@
+.container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header {
+    font-size: 3rem;
+    text-align: center;
+}
+
+.videosContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.footer {
+    margin-top: 30px;
+    display: flex;
+    width: 300px;
+    justify-content: space-between;
+    font-size: 2rem;
+    margin-bottom: 50px;
+}
+
+.next:hover{
+    color: greenyellow;
+}
+
+.next {
+    cursor: pointer;
+}
+
+.prev{
+    cursor: pointer;
+}
+
+.prev:hover{
+    color: yellowgreen;
+}
+
+.curr {
+    border: 2px solid black;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
