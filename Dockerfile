@@ -1,13 +1,13 @@
 FROM node:alpine
 
-RUN npm install --global nodemon
-
-WORKDIR /usr/src/app
+WORKDIR /usr/src
 
 COPY package*.json .
 
 RUN npm ci
 
+WORKDIR /usr/src/app
+
 COPY . .
 
-CMD ["npm","run","dev"]
+CMD ["npm","start"]
