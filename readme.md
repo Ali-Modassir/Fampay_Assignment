@@ -18,6 +18,8 @@
 
 - Dockerized the Project
 
+- Created a Dashboard Using React, which displays videos present in database, also added with search filter
+
 ## QUICK START - ON YOUR LOCAL MACHINE
 
 ### Requirements
@@ -28,6 +30,9 @@
 - Docker
 
 ### Getting Started
+
+- ### `master` branch contains APIs
+- ### `master-dashboard` branch contains dashboard build using React
 
 - Clone the repository
 
@@ -102,3 +107,34 @@ POST http://localhost:8000/videos/searchvideos
 
 - Import this Postman collection into your Postman
 - POSTMAN [JSON Link](https://www.getpostman.com/collections/9ad76c13e244c4055a3f)
+
+## Dashboard
+
+- Created a dashboard using React, which displays all the videos present in the database in the sorted order.
+
+- Added search filter, so that client can search the videos on providing a specific query.
+
+- Clone the repository of dashboard
+
+```
+  git clone --single-branch --branch master-dashboard https://github.com/Ali-Modassir/Fampay_Assignment.git
+
+```
+
+- Go to the directory:
+
+```
+  cd Fampay_Assignment
+```
+
+- Install dependencies
+
+```
+npm install
+```
+
+- Build and run the project, this starts this application at http://localhost:3000/:
+
+```
+ npm start
+```
