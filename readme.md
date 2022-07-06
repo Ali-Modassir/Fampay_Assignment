@@ -17,44 +17,40 @@
 git clone https://github.com/Ali-Modassir/Fampay_Assignment.git
 ```
 
-## OPTION 1 - Run on your machine
+- Go to the directory:
 
-- 1. Install dependencies
+  ```
+  cd Fampay_Assignment
+  ```
+
+## Option 1 - Run on your machine
+
+- Install dependencies
 
 ```
-cd Fampay_Assignment
 npm install
 ```
 
-- 2. Build and run the project
+- Build and run the project, this starts this application at http://localhost:8000/:
 
 ```
 npm start
 ```
 
-- 3. Navigate to `http://localhost:8000`
-
 ## OPTION 2 - Run on Docker
 
-- Docker Compose is an awesome tool for creating isolated development environments with Docker by using simple configurations with YAML.
+Docker Compose is an awesome tool for creating isolated development environments with Docker by using simple configurations with YAML.
+The repo includes the Dockerfile and docker-compose.yml necessary to set up the app.
 
-- The repo includes the Dockerfile and docker-compose.yml necessary to set up the app.
+- Install [docker](https://docs.docker.com/installation/) and [docker compose](https://docs.docker.com/compose/install/)
 
-1. Install [docker](https://docs.docker.com/installation/) and [docker compose](https://docs.docker.com/compose/install/)
+- Build the images:
 
-2. Go to the directory:
+  ```
+  docker-compose build
+  ```
 
-   ```
-   cd Fampay_Assignment
-   ```
-
-3. Build the images:
-
-   ```
-   docker-compose build
-   ```
-
-4. Run the app, this starts this application at http://localhost:4000/:
-   ```
-   docker-compose up -d
-   ```
+- Run the app, this starts this application at http://localhost:8000/:
+  ```
+  docker-compose up -d
+  ```
