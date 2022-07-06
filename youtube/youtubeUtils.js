@@ -6,6 +6,7 @@ const API_KEY_3 = process.env.YOUTUBE_API_KEY_3;
 
 module.exports.API_KEYS = [API_KEY_1, API_KEY_2, API_KEY_3];
 
+//List of all queries, through which we will search from youtube
 module.exports.QUERIES = [
   "cricket",
   "football",
@@ -16,4 +17,14 @@ module.exports.QUERIES = [
   "science",
   "travel",
   "world",
+  "arts",
+  "automobiles",
+  "books",
+  "business",
+  "fashion",
+  "technology",
+  "health",
+  "opinion",
+  "politics",
+  "realestate",
 ];
