@@ -6,6 +6,7 @@ function App() {
   const [videos, setVideos] = useState([]);
   const [totalPages, setTotalPages] = useState(1);
   const [currPage, setCurrPage] = useState(1);
+  const [search, setSearch] = useState("");
   useEffect(() => {
     const url = `${process.env.REACT_APP_API}/videos/getvideos?p=${currPage}`;
     fetch(url)
@@ -23,10 +24,38 @@ function App() {
       });
   }, [currPage]);
 
+  const searchVideos = () => {
+    const url = `${process.env.REACT_APP_API}/videos/searchvideos`;
+    const requestOptions = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ query: search }),
+    };
+    fetch(url, requestOptions)
+      .then((res) => {
+        if (res.status == 201) return res.json();
+        else throw new Error("Http status" + res.status);
+      })
+      .then((data) => {
+        setCurrPage(1);
+        setTotalPages(1);
+        setVideos(data.videos);
+      })
+      .catch((err) => console.log(err));
+  };
+
   return (
     <div className={style.container}>
       <div className={style.header}>Dashboard</div>
-      <div className={style.utils}></div>
+      <div className={style.utils}>
+        <input
+          className={style.search}
+          onChange={(e) => setSearch(e.target.value)}
+        />
+        <button className={style.btn} onClick={searchVideos}>
+          Search🔍
+        </button>
+      </div>
       <div className={style.videosContainer}>
         {videos?.map((video, index) => {
           return (
